@@ -41,7 +41,7 @@ public class InvokerRenderer extends IllagerRenderer<Invoker, InvokerRenderState
     protected void setupRotations(InvokerRenderState renderState, PoseStack poseStack, float bodyRot, float scale) {
         super.setupRotations(renderState, poseStack, bodyRot, scale);
         float rotation = Mth.sin(renderState.ageInTicks * 0.1F) * Mth.DEG_TO_RAD;
-        poseStack.mulPose((new Quaternionf()).rotationZYX(rotation, 0.0F, -rotation));
+        poseStack.rotate((new Quaternionf()).rotationZYX(rotation, 0.0F, -rotation));
         poseStack.translate(0.0F, 0.3F + rotation, 0.0F);
     }
 

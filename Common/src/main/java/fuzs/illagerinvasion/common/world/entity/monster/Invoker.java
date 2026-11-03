@@ -523,7 +523,7 @@ public class Invoker extends SpellcasterIllager {
 
         protected void knockback(LivingEntity target) {
             this.knockBack(target);
-            target.hurtMarked = true;
+            target.syncVelocity = true;
         }
 
         @Override

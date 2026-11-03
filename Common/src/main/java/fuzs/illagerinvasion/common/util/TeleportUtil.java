@@ -2,6 +2,7 @@ package fuzs.illagerinvasion.common.util;
 
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class TeleportUtil {
 
@@ -30,6 +31,6 @@ public class TeleportUtil {
             z = entity.getZ() + randZ;
         }
 
-        return entity.randomTeleport(x, y, z, true);
+        return entity.randomTeleport(x, y, z, true, (BlockState blockState) -> false);
     }
 }

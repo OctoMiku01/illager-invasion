@@ -1,15 +1,15 @@
 package fuzs.illagerinvasion.common.data.tags;
 
 import fuzs.illagerinvasion.common.init.ModTags;
-import fuzs.puzzleslib.common.api.data.v2.core.DataProviderContext;
-import fuzs.puzzleslib.common.api.data.v2.tags.AbstractTagProvider;
+import fuzs.puzzleslib.common.api.data.v3.core.DataProviderContext;
+import fuzs.puzzleslib.common.api.data.v3.tags.AbstractTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 
-public class ModBiomeTagProvider extends AbstractTagProvider<Biome> {
+public class ModBiomeTagProvider extends AbstractTagsProvider<Biome> {
 
     public ModBiomeTagProvider(DataProviderContext context) {
         super(Registries.BIOME, context);

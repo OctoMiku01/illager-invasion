@@ -1,6 +1,8 @@
 package fuzs.illagerinvasion.common.init;
 
-import net.minecraft.core.HolderLookup;
+import java.util.HashMap;
+import java.util.Map;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
@@ -8,10 +10,7 @@ import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.NestedLootTable;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-
-import java.util.HashMap;
-import java.util.Map;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 public class ModLootTables {
     static final Map<Identifier, ResourceKey<LootTable>> LOOT_TABLE_INJECTIONS = new HashMap<>();
@@ -49,11 +48,12 @@ public class ModLootTables {
         return newResourceKey;
     }
 
-    public static void onLootTableLoad(Identifier identifier, LootTable.Builder lootTable, HolderLookup.Provider registries) {
+    public static void onLootTableLoad(Identifier identifier, LootTable.Builder lootTable, HolderGetter.Provider registries) {
         if (LOOT_TABLE_INJECTIONS.containsKey(identifier)) {
             lootTable.withPool(LootPool.lootPool()
-                    .setRolls(ConstantValue.exactly(1.0F))
-                    .add(NestedLootTable.lootTableReference(LOOT_TABLE_INJECTIONS.get(identifier))));
+                    .setRolls(ContextIntProviders.exactly(1))
+                    .add(NestedLootTable.lootTableReference(registries.lookupOrThrow(Registries.LOOT_TABLE)
+                            .getOrThrow(LOOT_TABLE_INJECTIONS.get(identifier)))));
         }
     }
 }

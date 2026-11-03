@@ -124,7 +124,7 @@ public class Archivist extends SpellcasterIllager {
 
         protected void knockback(LivingEntity target) {
             this.knockBack(target);
-            target.hurtMarked = true;
+            target.syncVelocity = true;
         }
 
         private List<LivingEntity> getTargets() {

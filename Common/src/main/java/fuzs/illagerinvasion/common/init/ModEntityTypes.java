@@ -58,21 +58,27 @@ public class ModEntityTypes {
     public static final Holder.Reference<EntityType<SkullBolt>> SKULL_BOLT_ENTITY_TYPE = ModRegistry.REGISTRIES.registerEntityType(
             "skull_bolt",
             () -> EntityType.Builder.<SkullBolt>of(SkullBolt::new, MobCategory.MISC)
+                    .noLootTable()
                     .sized(0.3F, 0.3F)
                     .clientTrackingRange(4)
                     .updateInterval(10));
     public static final Holder.Reference<EntityType<ThrownHatchet>> HATCHET_ENTITY_TYPE = ModRegistry.REGISTRIES.registerEntityType(
             "hatchet",
             () -> EntityType.Builder.<ThrownHatchet>of(ThrownHatchet::new, MobCategory.MISC)
+                    .noLootTable()
                     .sized(0.35F, 0.35F)
                     .clientTrackingRange(4)
                     .updateInterval(10));
     public static final Holder.Reference<EntityType<InvokerFangs>> INVOKER_FANGS_ENTITY_TYPE = ModRegistry.REGISTRIES.registerEntityType(
             "invoker_fangs",
-            () -> EntityType.Builder.<InvokerFangs>of(InvokerFangs::new, MobCategory.MISC).sized(0.65F, 1.05F));
+            () -> EntityType.Builder.<InvokerFangs>of(InvokerFangs::new, MobCategory.MISC)
+                    .noLootTable()
+                    .sized(0.65F, 1.05F));
     public static final Holder.Reference<EntityType<FlyingMagma>> FLYING_MAGMA_ENTITY_TYPE = ModRegistry.REGISTRIES.registerEntityType(
             "flying_magma",
-            () -> EntityType.Builder.<FlyingMagma>of(FlyingMagma::new, MobCategory.MISC).sized(0.95F, 1.05F));
+            () -> EntityType.Builder.<FlyingMagma>of(FlyingMagma::new, MobCategory.MISC)
+                    .noLootTable()
+                    .sized(0.95F, 1.05F));
 
     public static void bootstrap() {
         // NO-OP

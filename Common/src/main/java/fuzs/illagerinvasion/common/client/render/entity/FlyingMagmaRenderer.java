@@ -41,8 +41,8 @@ public class FlyingMagmaRenderer extends EntityRenderer<FlyingMagma, FlyingMagma
     public void submit(FlyingMagmaRenderState state, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, CameraRenderState camera) {
         if (!state.blockModel.isEmpty()) {
             poseStack.pushPose();
-            poseStack.mulPose(Axis.YP.rotationDegrees(state.yRot));
-            poseStack.mulPose(Axis.ZP.rotationDegrees(state.xRot));
+            poseStack.rotate(Axis.YP.rotationDegrees(state.yRot));
+            poseStack.rotate(Axis.ZP.rotationDegrees(state.xRot));
             state.blockModel.submit(poseStack,
                     submitNodeCollector,
                     state.lightCoords,

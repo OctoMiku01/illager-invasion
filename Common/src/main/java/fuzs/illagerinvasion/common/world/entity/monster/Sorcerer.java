@@ -198,7 +198,7 @@ public class Sorcerer extends SpellcasterIllager {
         private void placeMagicFire(BlockPos blockPos) {
             BlockState blockState = Sorcerer.this.level().getBlockState(blockPos.below());
             if (!blockState.is(ModTags.MAGIC_FIRE_REPLACEABLE_BLOCK_TAG)) {
-                for (BlockPos offset : BlockPos.withinManhattan(blockPos, 1, 1, 1)) {
+                for (BlockPos offset : BlockPos.withinManhattan(blockPos, 1)) {
                     blockState = Sorcerer.this.level().getBlockState(offset);
                     if (blockState.is(ModTags.MAGIC_FIRE_REPLACEABLE_BLOCK_TAG)) {
                         Sorcerer.this.level()

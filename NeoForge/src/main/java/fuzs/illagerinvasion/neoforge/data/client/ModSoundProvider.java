@@ -2,8 +2,8 @@ package fuzs.illagerinvasion.neoforge.data.client;
 
 import fuzs.illagerinvasion.common.IllagerInvasion;
 import fuzs.illagerinvasion.common.init.ModSoundEvents;
-import fuzs.puzzleslib.common.api.data.v2.core.DataProviderContext;
-import fuzs.puzzleslib.neoforge.api.client.data.v2.AbstractSoundProvider;
+import fuzs.puzzleslib.common.api.data.v3.core.DataProviderContext;
+import fuzs.puzzleslib.neoforge.api.client.data.v3.sounds.AbstractSoundProvider;
 import net.minecraft.sounds.SoundEvents;
 
 public class ModSoundProvider extends AbstractSoundProvider {
@@ -13,7 +13,7 @@ public class ModSoundProvider extends AbstractSoundProvider {
     }
 
     @Override
-    public void addSounds() {
+    public void registerSounds() {
         this.add(ModSoundEvents.HORN_OF_SIGHT_SOUND_EVENT.value(), sound(SoundEvents.RAID_HORN.value()));
         this.add(ModSoundEvents.LOST_CANDLE_FIND_ORE_SOUND_EVENT.value(), sound(SoundEvents.BELL_RESONATE));
         this.add(ModSoundEvents.ARCHIVIST_DEATH_SOUND_EVENT.value(),

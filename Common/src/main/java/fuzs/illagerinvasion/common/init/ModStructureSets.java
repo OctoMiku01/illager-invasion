@@ -1,17 +1,16 @@
 package fuzs.illagerinvasion.common.init;
 
+import java.util.List;
+import java.util.Optional;
 import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.structure.BuiltinStructureSets;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
+import net.minecraft.world.level.levelgen.structure.placement.AbstractSpreadingStructurePlacement;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType;
-import net.minecraft.world.level.levelgen.structure.placement.StructurePlacement;
-
-import java.util.List;
-import java.util.Optional;
 
 public class ModStructureSets {
     public static final ResourceKey<StructureSet> FIRECALLER_HUT = ModRegistry.REGISTRIES.makeResourceKey(Registries.STRUCTURE_SET,
@@ -30,7 +29,7 @@ public class ModStructureSets {
                 new StructureSet(List.of(StructureSet.entry(context.lookup(Registries.STRUCTURE)
                         .getOrThrow(ModStructures.FIRECALLER_HUT))),
                         new RandomSpreadStructurePlacement(Vec3i.ZERO,
-                                StructurePlacement.FrequencyReductionMethod.DEFAULT,
+                                AbstractSpreadingStructurePlacement.FrequencyReductionMethod.DEFAULT,
                                 1.0F,
                                 169476076,
                                 Optional.empty(),
@@ -41,10 +40,10 @@ public class ModStructureSets {
                 new StructureSet(List.of(StructureSet.entry(context.lookup(Registries.STRUCTURE)
                         .getOrThrow(ModStructures.ILLAGER_FORT))),
                         new RandomSpreadStructurePlacement(Vec3i.ZERO,
-                                StructurePlacement.FrequencyReductionMethod.LEGACY_TYPE_1,
+                                AbstractSpreadingStructurePlacement.FrequencyReductionMethod.LEGACY_TYPE_1,
                                 0.2F,
                                 169476082,
-                                Optional.of(new StructurePlacement.ExclusionZone(context.lookup(Registries.STRUCTURE_SET)
+                                Optional.of(new AbstractSpreadingStructurePlacement.ExclusionZone(context.lookup(Registries.STRUCTURE_SET)
                                         .getOrThrow(BuiltinStructureSets.VILLAGES), 10)),
                                 42,
                                 28,
@@ -53,10 +52,10 @@ public class ModStructureSets {
                 new StructureSet(List.of(StructureSet.entry(context.lookup(Registries.STRUCTURE)
                         .getOrThrow(ModStructures.ILLUSIONER_TOWER))),
                         new RandomSpreadStructurePlacement(Vec3i.ZERO,
-                                StructurePlacement.FrequencyReductionMethod.DEFAULT,
+                                AbstractSpreadingStructurePlacement.FrequencyReductionMethod.DEFAULT,
                                 1.0F,
                                 169476081,
-                                Optional.of(new StructurePlacement.ExclusionZone(context.lookup(Registries.STRUCTURE_SET)
+                                Optional.of(new AbstractSpreadingStructurePlacement.ExclusionZone(context.lookup(Registries.STRUCTURE_SET)
                                         .getOrThrow(BuiltinStructureSets.VILLAGES), 10)),
                                 42,
                                 28,
@@ -65,10 +64,10 @@ public class ModStructureSets {
                 new StructureSet(List.of(StructureSet.entry(context.lookup(Registries.STRUCTURE)
                         .getOrThrow(ModStructures.LABYRINTH))),
                         new RandomSpreadStructurePlacement(Vec3i.ZERO,
-                                StructurePlacement.FrequencyReductionMethod.DEFAULT,
+                                AbstractSpreadingStructurePlacement.FrequencyReductionMethod.DEFAULT,
                                 1.0F,
                                 169476079,
-                                Optional.of(new StructurePlacement.ExclusionZone(context.lookup(Registries.STRUCTURE_SET)
+                                Optional.of(new AbstractSpreadingStructurePlacement.ExclusionZone(context.lookup(Registries.STRUCTURE_SET)
                                         .getOrThrow(BuiltinStructureSets.VILLAGES), 10)),
                                 42,
                                 28,
@@ -77,7 +76,7 @@ public class ModStructureSets {
                 new StructureSet(List.of(StructureSet.entry(context.lookup(Registries.STRUCTURE)
                         .getOrThrow(ModStructures.SORCERER_HUT))),
                         new RandomSpreadStructurePlacement(Vec3i.ZERO,
-                                StructurePlacement.FrequencyReductionMethod.DEFAULT,
+                                AbstractSpreadingStructurePlacement.FrequencyReductionMethod.DEFAULT,
                                 1.0F,
                                 169476080,
                                 Optional.empty(),

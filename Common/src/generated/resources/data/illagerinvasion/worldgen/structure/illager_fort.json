@@ -10,26 +10,22 @@
       "spawns": [
         {
           "type": "minecraft:pillager",
-          "maxCount": 1,
-          "minCount": 1,
+          "count": 1,
           "weight": 3
         },
         {
           "type": "illagerinvasion:marauder",
-          "maxCount": 1,
-          "minCount": 1,
+          "count": 1,
           "weight": 3
         },
         {
           "type": "illagerinvasion:basher",
-          "maxCount": 1,
-          "minCount": 1,
+          "count": 1,
           "weight": 1
         },
         {
           "type": "illagerinvasion:provoker",
-          "maxCount": 1,
-          "minCount": 1,
+          "count": 1,
           "weight": 3
         }
       ]

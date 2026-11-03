@@ -1,8 +1,8 @@
-// 26.2	2026-06-19T00:18:24.473527	Registries
+// 26.3	2026-11-03T23:48:51.7186644	illagerinvasion-global/Registries for world
 df6b4becc917d46afc823608eeccbb4f9b82aa8e data/illagerinvasion/instrument/reveal.json
-fc69ddbb7cabad4f925e277851a8fe902502388f data/illagerinvasion/trim_material/platinum.json
+2e19c39728f63194e5304e0185b1ed07163d60c0 data/illagerinvasion/trim_material/platinum.json
 f5387f7cd1cb490d199171e0c73b1f38ee4ec8e9 data/illagerinvasion/worldgen/structure/firecaller_hut.json
-9d7416486bcc696e5aac43dbfb022e1476d7f902 data/illagerinvasion/worldgen/structure/illager_fort.json
+fa059d7174f96adc3123f19e600fdd73b4eab4bb data/illagerinvasion/worldgen/structure/illager_fort.json
 5b1f8ae7433f8d23be4e0bd4f7615956fb0b1903 data/illagerinvasion/worldgen/structure/illusioner_tower.json
 a8da4e30d8b5dc9ab184d67d42f049b24f687f0d data/illagerinvasion/worldgen/structure/labyrinth.json
 9b61a99bf0f22e6c5dbbb80c8e226f06defc42d3 data/illagerinvasion/worldgen/structure/sorcerer_hut.json

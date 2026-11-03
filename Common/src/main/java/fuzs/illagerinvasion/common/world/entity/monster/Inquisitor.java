@@ -198,9 +198,9 @@ public class Inquisitor extends AbstractIllager implements Stunnable {
     }
 
     @Override
-    protected void blockedByItem(LivingEntity defender, DamageSource source, float damage) {
+    protected void blockedByItem(LivingEntity defender, DamageSource source, float damage, boolean fullyBlocked) {
         this.knockBack(defender);
-        defender.hurtMarked = true;
+        defender.syncVelocity = true;
         defender.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 0));
     }
 
@@ -265,7 +265,7 @@ public class Inquisitor extends AbstractIllager implements Stunnable {
                     level.getEntitiesOfClass(LivingEntity.class,
                             this.getBoundingBox().inflate(8.0),
                             Predicate.not(Monster.class::isInstance)).forEach((LivingEntity entity) -> {
-                        this.blockedByItem(entity, source, damage);
+                        this.blockedByItem(entity, source, damage, false);
                     });
                     return super.hurtServer(level, source, damage);
                 }

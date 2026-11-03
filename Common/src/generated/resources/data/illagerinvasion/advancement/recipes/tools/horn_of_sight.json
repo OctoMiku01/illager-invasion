@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "illagerinvasion:horn_of_sight"
+        "recipes": "illagerinvasion:horn_of_sight"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

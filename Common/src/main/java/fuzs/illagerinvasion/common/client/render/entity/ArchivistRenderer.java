@@ -38,10 +38,10 @@ public class ArchivistRenderer extends IllagerRenderer<Archivist, ArchivistRende
 
                 poseStack.pushPose();
                 poseStack.translate(0.0F, 0.362F, -0.5F);
-                poseStack.mulPose(Axis.YP.rotationDegrees(270.0F));
+                poseStack.rotate(Axis.YP.rotationDegrees(270.0F));
                 if (renderState.isCastingSpell) {
                     poseStack.translate(-0.4F, 0.0F, 0.0F);
-                    poseStack.mulPose(Axis.ZN.rotationDegrees(30.0F));
+                    poseStack.rotate(Axis.ZN.rotationDegrees(30.0F));
                 }
 
                 nodeCollector.submitModel(this.book,
@@ -52,8 +52,7 @@ public class ArchivistRenderer extends IllagerRenderer<Archivist, ArchivistRende
                         -1,
                         EnchantTableRenderer.BOOK_TEXTURE,
                         ArchivistRenderer.this.sprites,
-                        renderState.outlineColor,
-                        null);
+                        renderState.outlineColor);
                 poseStack.popPose();
             }
         });

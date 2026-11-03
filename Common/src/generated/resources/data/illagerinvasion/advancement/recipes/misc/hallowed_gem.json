@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "illagerinvasion:hallowed_gem"
+        "recipes": "illagerinvasion:hallowed_gem"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

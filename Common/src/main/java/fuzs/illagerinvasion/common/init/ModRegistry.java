@@ -12,11 +12,10 @@ import fuzs.illagerinvasion.common.world.level.block.MagicFireBlock;
 import fuzs.illagerinvasion.common.world.level.levelgen.structure.templatesystem.DataMarkerStructureProcessor;
 import fuzs.multiloaderdataextensions.common.api.v2.DataMapRegistrar;
 import fuzs.multiloaderdataextensions.common.api.v2.DataMapToken;
-import fuzs.puzzleslib.common.api.data.v2.AbstractDatapackRegistriesProvider;
+import fuzs.puzzleslib.common.api.init.v3.registry.ContentRegistrationHelper;
 import fuzs.puzzleslib.common.api.init.v3.registry.RegistryManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
-import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -37,14 +36,6 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.material.MapColor;
 
 public class ModRegistry {
-    public static final RegistrySetBuilder REGISTRY_SET_BUILDER = new RegistrySetBuilder().add(Registries.TRIM_MATERIAL,
-                    ModRegistry::boostrapTrimMaterials)
-            .add(Registries.INSTRUMENT, ModRegistry::boostrapInstruments)
-            .add(Registries.STRUCTURE, ModStructures::bootstrap)
-            .add(Registries.STRUCTURE_SET, ModStructureSets::bootstrap)
-            .add(Registries.TEMPLATE_POOL, ModTemplatePools::bootstrap)
-            .add(Registries.PROCESSOR_LIST, ModRegistry::boostrapStructureProcessorLists);
-
     static final RegistryManager REGISTRIES = RegistryManager.from(IllagerInvasion.MOD_ID);
     public static final Holder.Reference<Block> IMBUING_TABLE_BLOCK = REGISTRIES.registerBlock("imbuing_table",
             ImbuingTableBlock::new,
@@ -141,14 +132,14 @@ public class ModRegistry {
     }
 
     public static void boostrapTrimMaterials(BootstrapContext<TrimMaterial> context) {
-        AbstractDatapackRegistriesProvider.registerTrimMaterial(context,
+        ContentRegistrationHelper.registerTrimMaterial(context,
                 PLATINUM_TRIM_MATERIAL,
-                ModItems.PLATINUM_SHEET_ITEM.value(),
-                0x527D7C);
+                0x527D7C,
+                IllagerInvasion.id("trim/platinum"));
     }
 
     public static void boostrapInstruments(BootstrapContext<Instrument> context) {
-        AbstractDatapackRegistriesProvider.registerInstrument(context,
+        ContentRegistrationHelper.registerInstrument(context,
                 REVEAL_INSTRUMENT,
                 ModSoundEvents.HORN_OF_SIGHT_SOUND_EVENT,
                 7.0F,

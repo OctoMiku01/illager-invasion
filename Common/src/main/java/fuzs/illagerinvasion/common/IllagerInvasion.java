@@ -12,14 +12,11 @@ import fuzs.puzzleslib.common.api.core.v1.context.EntityAttributesContext;
 import fuzs.puzzleslib.common.api.core.v1.context.SpawnPlacementsContext;
 import fuzs.puzzleslib.common.api.event.v1.entity.ServerEntityEvents;
 import fuzs.puzzleslib.common.api.event.v1.server.LootTableLoadCallback;
-import fuzs.puzzleslib.common.api.event.v1.server.RegisterPotionBrewingMixesCallback;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.PatrollingMonster;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.levelgen.Heightmap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,15 +42,6 @@ public class IllagerInvasion implements ModConstructor {
     private static void registerEventHandlers() {
         ServerEntityEvents.LOAD.register(VillagerGoalHandler::onEntityLoad);
         LootTableLoadCallback.EVENT.register(ModLootTables::onLootTableLoad);
-        RegisterPotionBrewingMixesCallback.EVENT.register(IllagerInvasion::registerPotionRecipes);
-    }
-
-    private static void registerPotionRecipes(RegisterPotionBrewingMixesCallback.Builder builder) {
-        builder.registerPotionRecipe(Potions.AWKWARD, Items.GOAT_HORN, ModRegistry.BERSERKING_POTION);
-        builder.registerPotionRecipe(ModRegistry.BERSERKING_POTION, Items.REDSTONE, ModRegistry.LONG_BERSERKING_POTION);
-        builder.registerPotionRecipe(ModRegistry.BERSERKING_POTION,
-                Items.GLOWSTONE_DUST,
-                ModRegistry.STRONG_BERSERKING_POTION);
     }
 
     @Override

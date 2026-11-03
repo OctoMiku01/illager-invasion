@@ -28,7 +28,7 @@ public class InvokerFangsRenderer extends EvokerFangsRenderer {
         if (renderState.biteProgress != 0.0F) {
             poseStack.pushPose();
             poseStack.scale(1.15F, 1.15F, 1.15F);
-            poseStack.mulPose(Axis.YP.rotationDegrees(90.0F - renderState.yRot));
+            poseStack.rotate(Axis.YP.rotationDegrees(90.0F - renderState.yRot));
             float scale = 2.0F * (renderState.biteProgress > 0.9F ? ((1.0F - renderState.biteProgress) / 0.1F) : 1.0F);
             poseStack.scale(-scale, -scale, scale);
             poseStack.translate(0.0F, -0.626F, 0.0F);
@@ -39,8 +39,9 @@ public class InvokerFangsRenderer extends EvokerFangsRenderer {
                     this.model.renderType(TEXTURE_LOCATION),
                     renderState.lightCoords,
                     OverlayTexture.NO_OVERLAY,
-                    renderState.outlineColor,
-                    null);
+                    -1,
+                    null,
+                    renderState.outlineColor);
             poseStack.popPose();
             super.submit(renderState, poseStack, nodeCollector, cameraRenderState);
         }

@@ -47,9 +47,9 @@ public class ThrownHatchetRenderer extends ThrownItemRenderer<ThrownHatchet> {
     public void submit(ThrownItemRenderState renderState, PoseStack poseStack, SubmitNodeCollector nodeCollector, CameraRenderState cameraRenderState) {
         poseStack.pushPose();
         poseStack.scale(1.45F, 1.45F, 1.45F);
-        poseStack.mulPose(Axis.YP.rotationDegrees(((ThrownHatchetRenderState) renderState).yRot + 90.0F));
+        poseStack.rotate(Axis.YP.rotationDegrees(((ThrownHatchetRenderState) renderState).yRot + 90.0F));
         float rotation = ((ThrownHatchetRenderState) renderState).isInGround ? 1.0F : renderState.ageInTicks;
-        poseStack.mulPose(Axis.ZP.rotationDegrees(((ThrownHatchetRenderState) renderState).xRot + 90.0F * rotation));
+        poseStack.rotate(Axis.ZP.rotationDegrees(((ThrownHatchetRenderState) renderState).xRot + 90.0F * rotation));
         poseStack.translate(0.1F, -0.2F, 0.0F);
         renderState.item.submit(poseStack,
                 nodeCollector,
