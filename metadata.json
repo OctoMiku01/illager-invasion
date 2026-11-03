@@ -48,18 +48,8 @@
     ],
     "links": [
         {
-            "name": "curseforge",
-            "slug": "illager-invasion",
-            "id": "891324"
-        },
-        {
             "name": "github",
-            "slug": "illager-invasion"
-        },
-        {
-            "name": "modrinth",
-            "slug": "illager-invasion",
-            "id": "jSV9w0J5"
+            "slug": "OctoMiku01/illager-invasion"
         }
     ],
     "environments": {
