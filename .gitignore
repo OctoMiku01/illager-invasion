@@ -67,3 +67,6 @@ run
 
 # BlueJ files
 *.ctxt
+
+### VS Code ###
+.vscode/
