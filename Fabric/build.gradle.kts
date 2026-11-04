@@ -14,3 +14,11 @@ multiloader {
         mixin("Raid\u0024RaiderTypeFabricMixin")
     }
 }
+
+loom {
+    runs.configureEach {
+        // Minecraft 26.3 launches with -XX:StackShadowPages=32 (see its version JSON), newer Loom versions add it too.
+        // Without it the native shader compiler (shaderc / spirv-cross) randomly crashes the dev client under OpenGL.
+        vmArg("-XX:StackShadowPages=32")
+    }
+}
